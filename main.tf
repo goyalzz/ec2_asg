@@ -18,6 +18,5 @@ resource "aws_launch_configuration" "lc" {
   name          = "${var.name}_lc"
   image_id      = "${lookup(var.aws_amis, var.aws_region)}"
   instance_type = "${var.instance_type}"
-  user_data     = "${data.template_file.bootstrap.rendered}"
   key_name      = "${var.key_pair_id}"
 }

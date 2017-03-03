@@ -12,8 +12,6 @@ variable "asg_desired" {
   default = "1"
 }
 
-variable "availability_zones" {}
-
 variable "subnets" {
   default = []
 }
