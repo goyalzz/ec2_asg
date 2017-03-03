@@ -39,6 +39,6 @@ variable "availability_zones" {
   default = ""
 }
 
-variable "subnets" {
+variable "elb_subnets" {
   default = ""
 }
