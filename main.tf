@@ -20,3 +20,8 @@ resource "aws_launch_configuration" "lc" {
   instance_type = "${var.instance_type}"
   key_name      = "${var.key_pair_id}"
 }
+
+resource "aws_elb" "elb" {
+  name               = "${var.name}_elb"
+  availability_zones = ["${split(",", var.availability_zones}"]
+}
