@@ -38,7 +38,3 @@ variable "key_pair_id" {}
 variable "availability_zones" {
   default = ""
 }
-
-variable "elb_subnets" {
-  default = ""
-}
