@@ -22,6 +22,14 @@ resource "aws_launch_configuration" "lc" {
 }
 
 resource "aws_elb" "elb" {
-  name               = "${var.name}_elb"
-  availability_zones = ["${split(",", var.availability_zones}"]
+  name               = "${var.name}-elb"
+  availability_zones = ["${split(",", var.availability_zones)}"]
+  subnets            = ["${split(",", var.subnets)}"]
+
+  listener {
+    instance_port     = 8000
+    instance_protocol = "http"
+    lb_port           = 80
+    lb_protocol       = "http"
+  }
 }
