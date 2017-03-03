@@ -16,7 +16,7 @@ resource "aws_autoscaling_group" "asg" {
 
 resource "aws_launch_configuration" "lc" {
   name          = "${var.name}_lc"
-  image_id      = "${lookup(var.aws_amis, var.aws_region)}"
+  image_id      = "${lookup(var.aws_amis, var.aws_region_os)}"
   instance_type = "${var.instance_type}"
   key_name      = "${var.key_pair_id}"
 }
