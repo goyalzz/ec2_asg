@@ -15,10 +15,11 @@ resource "aws_autoscaling_group" "asg" {
 }
 
 resource "aws_launch_configuration" "lc" {
-  name          = "${var.name}_lc"
-  image_id      = "${lookup(var.aws_ami_map, var.aws_region_os)}"
-  instance_type = "${var.instance_type}"
-  key_name      = "${var.key_pair_id}"
+  name            = "${var.name}_lc"
+  image_id        = "${lookup(var.aws_ami_map, var.aws_region_os)}"
+  instance_type   = "${var.instance_type}"
+  key_name        = "${var.key_pair_id}"
+  security_groups = ["${var.security_group_ids}"]
 }
 
 resource "aws_elb" "elb" {

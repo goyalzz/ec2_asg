@@ -38,3 +38,7 @@ variable "key_pair_id" {}
 variable "availability_zones" {
   default = ""
 }
+
+variable "security_group_ids" {
+  type = "list"
+}
