@@ -42,3 +42,11 @@ variable "availability_zones" {
 variable "security_group_ids" {
   type = "list"
 }
+
+variable "instance_port" {
+  default = "80"
+}
+
+variable "lb_port" {
+  default = "80"
+}

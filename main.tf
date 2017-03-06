@@ -29,9 +29,9 @@ resource "aws_elb" "elb" {
   subnets = ["${var.subnets}"]
 
   listener {
-    instance_port     = 8000
+    instance_port     = "${var.instance_port}"
     instance_protocol = "http"
-    lb_port           = 80
+    lb_port           = "${var.lb_port}"
     lb_protocol       = "http"
   }
 }
