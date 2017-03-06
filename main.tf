@@ -25,8 +25,8 @@ resource "aws_launch_configuration" "lc" {
 resource "aws_elb" "elb" {
   name = "${var.name}-elb"
 
-  #  availability_zones = ["${split(",", var.availability_zones)}"]
-  subnets = ["${var.subnets}"]
+  subnets         = ["${var.subnets}"]
+  security_groups = ["${var.security_group_ids}"]
 
   listener {
     instance_port     = "${var.instance_port}"
