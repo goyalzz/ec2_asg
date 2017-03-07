@@ -1,6 +1,6 @@
 resource "aws_autoscaling_group" "asg" {
   name                 = "${var.name}"
-  vpc_zone_identifier  = ["${var.subnets}"]
+  vpc_zone_identifier  = ["${var.instance_subnets}"]
   max_size             = "${var.asg_max}"
   min_size             = "${var.asg_min}"
   desired_capacity     = "${var.asg_desired}"
@@ -25,7 +25,7 @@ resource "aws_launch_configuration" "lc" {
 resource "aws_elb" "elb" {
   name = "${var.name}-elb"
 
-  subnets         = ["${var.subnets}"]
+  subnets         = ["${var.elb_subnets}"]
   security_groups = ["${var.security_group_ids}"]
 
   listener {

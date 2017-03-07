@@ -12,7 +12,11 @@ variable "asg_desired" {
   default = "1"
 }
 
-variable "subnets" {
+variable "elb_subnets" {
+  default = []
+}
+
+variable "instance_subnets_subnets" {
   default = []
 }
 
