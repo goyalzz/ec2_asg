@@ -16,7 +16,7 @@ variable "elb_subnets" {
   default = []
 }
 
-variable "instance_subnets_subnets" {
+variable "instance_subnets" {
   default = []
 }
 
