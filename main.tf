@@ -7,6 +7,10 @@ resource "aws_autoscaling_group" "asg" {
   force_delete         = true
   launch_configuration = "${aws_launch_configuration.lc.name}"
 
+  lifecycle {
+    create_before_destroy = true
+  }
+
   tag {
     key                 = "Name"
     value               = "${var.name}_asg"
@@ -15,7 +19,7 @@ resource "aws_autoscaling_group" "asg" {
 }
 
 resource "aws_launch_configuration" "lc" {
-  name            = "${var.name}_lc"
+  name_prefix     = "${var.name}_lc"
   image_id        = "${lookup(var.aws_ami_map, var.aws_region_os)}"
   instance_type   = "${var.instance_type}"
   key_name        = "${var.key_pair_id}"
