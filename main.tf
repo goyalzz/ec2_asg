@@ -20,6 +20,10 @@ resource "aws_launch_configuration" "lc" {
   instance_type   = "${var.instance_type}"
   key_name        = "${var.key_pair_id}"
   security_groups = ["${var.security_group_ids}"]
+
+  lifecycle {
+    create_before_destroy = true
+  }
 }
 
 resource "aws_elb" "elb" {
