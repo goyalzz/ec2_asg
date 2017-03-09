@@ -20,16 +20,7 @@ variable "instance_subnets" {
   default = []
 }
 
-variable "aws_ami_map" {
-  type = "map"
-
-  default = {
-    ap-south-1-centos     = "ami-95cda6fa"
-    ap-south-1-ubuntu     = "ami-dd3442b2"
-    ap-southeast-1-centos = "ami-f068a193"
-    eu-west-1-centos      = "ami-7abd0209"
-  }
-}
+variable "ami_id" {}
 
 variable "aws_region_os" {}
 
