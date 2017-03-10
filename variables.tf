@@ -22,8 +22,6 @@ variable "instance_subnets" {
 
 variable "ami_id" {}
 
-variable "aws_region_os" {}
-
 variable "instance_type" {
   default = "t2.micro"
 }
