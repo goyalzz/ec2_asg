@@ -26,7 +26,9 @@ variable "instance_type" {
   default = "t2.micro"
 }
 
-variable "key_pair_id" {}
+variable "key_pair_id" {
+  default = ""
+}
 
 variable "availability_zones" {
   default = ""
