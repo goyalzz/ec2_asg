@@ -6,7 +6,7 @@ resource "aws_autoscaling_group" "asg" {
   desired_capacity     = "${var.asg_desired}"
   force_delete         = true
   launch_configuration = "${aws_launch_configuration.lc.name}"
-  load_balancers       = "${module.aws_elb.elb.id}"
+  load_balancers       = "${aws_elb.elb.id}"
   termination_policies = "OldestInstance"
 
   lifecycle {
