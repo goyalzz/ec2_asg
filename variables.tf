@@ -45,3 +45,5 @@ variable "instance_port" {
 variable "lb_port" {
   default = "80"
 }
+
+variable "user_data" {}

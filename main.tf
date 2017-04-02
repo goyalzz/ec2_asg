@@ -26,6 +26,7 @@ resource "aws_launch_configuration" "lc" {
   instance_type   = "${var.instance_type}"
   key_name        = "${var.key_name}"
   security_groups = ["${var.security_group_ids}"]
+  user_data       = "${var.user_data}"
 
   lifecycle {
     create_before_destroy = true
