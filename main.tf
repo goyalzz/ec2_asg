@@ -39,7 +39,7 @@ resource "aws_elb" "elb" {
   subnets         = ["${var.elb_subnets}"]
   security_groups = ["${var.security_group_ids}"]
 
-  internal = "${internal}"
+  internal = "${var.internal}"
 
   listener {
     instance_port     = "${var.instance_port}"
