@@ -49,3 +49,7 @@ variable "lb_port" {
 variable "user_data" {
   default = ""
 }
+
+variable "internal" {
+  default = "true"
+}
