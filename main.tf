@@ -52,7 +52,7 @@ resource "aws_elb" "elb" {
 resource "aws_route53_record" "route53_record" {
   zone_id = "${var.zone_id}"
   name    = "${var.name}"
-  type    = "A"
+  type    = "CNAME"
   ttl     = "30"
   records = ["${aws_elb.elb.dns_name}"]
 }
