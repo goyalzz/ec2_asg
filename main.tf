@@ -48,3 +48,11 @@ resource "aws_elb" "elb" {
     lb_protocol       = "http"
   }
 }
+
+resource "aws_route53_record" "route53_record" {
+  zone_id = "${var.zone_id}"
+  name    = "${var.name}"
+  type    = "A"
+  ttl     = "30"
+  records = ["${aws_elb.elb.dns_name}"]
+}

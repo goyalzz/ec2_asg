@@ -53,3 +53,5 @@ variable "user_data" {
 variable "internal" {
   default = "true"
 }
+
+variable "zone_id" {}
