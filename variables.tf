@@ -55,3 +55,7 @@ variable "internal" {
 }
 
 variable "zone_id" {}
+
+variable "iam_instance_profile" {
+  default = ""
+}
