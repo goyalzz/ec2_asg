@@ -59,3 +59,7 @@ variable "zone_id" {}
 variable "iam_instance_profile" {
   default = ""
 }
+
+variable "suspended_processes" {
+  default = []
+}
