@@ -8,7 +8,7 @@ resource "aws_autoscaling_group" "asg" {
   launch_configuration = "${aws_launch_configuration.lc.name}"
   load_balancers       = ["${aws_elb.elb.id}"]
   termination_policies = ["OldestInstance"]
-  suspended_processes  = ${var.suspended_processes}
+  suspended_processes  = "${var.suspended_processes}"
 
   lifecycle {
     create_before_destroy = true
