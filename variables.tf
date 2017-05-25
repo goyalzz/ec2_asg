@@ -63,3 +63,22 @@ variable "iam_instance_profile" {
 variable "suspended_processes" {
   default = []
 }
+
+variable "group" {
+default = ""
+}
+variable "team" {
+default = ""
+}
+variable "project" {
+default = ""
+}
+variable "environment" {
+default = ""
+}
+variable "owner" {
+default = ""
+}
+variable "use" {
+default = ""
+}

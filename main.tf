@@ -19,6 +19,36 @@ resource "aws_autoscaling_group" "asg" {
     value               = "${var.name}_asg"
     propagate_at_launch = "true"
   }
+  tag {
+    key                 = "Group"
+    value               = "${var.group}"
+    propagate_at_launch = "true"
+  }
+  tag {
+    key                 = "Team"
+    value               = "${var.team}"
+    propagate_at_launch = "true"
+  }
+  tag {
+    key                 = "Project"
+    value               = "${var.project}"
+    propagate_at_launch = "true"
+  }
+  tag {
+    key                 = "Environment"
+    value               = "${var.environment}"
+    propagate_at_launch = "true"
+  }
+  tag {
+    key                 = "Owner"
+    value               = "${var.owner}"
+    propagate_at_launch = "true"
+  }
+  tag {
+    key                 = "Use"
+    value               = "${var.use}"
+    propagate_at_launch = "true"
+  }
 }
 
 resource "aws_launch_configuration" "lc" {
