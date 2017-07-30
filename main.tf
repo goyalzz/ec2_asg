@@ -60,6 +60,12 @@ resource "aws_launch_configuration" "lc" {
   user_data            = "${var.user_data}"
   iam_instance_profile = "${var.iam_instance_profile}"
 
+  root_block_device {
+    volume_type           = "${var.asg_root_volume_type}"
+    volume_size           = "${var.asg_root_volume_size}"
+    delete_on_termination = "true"
+  }
+
   lifecycle {
     create_before_destroy = true
   }

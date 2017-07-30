@@ -64,6 +64,14 @@ variable "suspended_processes" {
   default = []
 }
 
+variable "asg_root_volume_type" {
+  default = "gp2"
+}
+
+variable "asg_root_volume_size" {
+  default = "10"
+}
+
 variable "group" {
 default = ""
 }
